@@ -1,17 +1,22 @@
 use wine
-create table web(
-    url char(50) not null,
+create table wineweb(
+    url varchar(150) not null,
     primary key(url)
 );
-create table data(
-    id int(7) not null,
-    title varchar(50),
-    subtitle varchar(50),
-    price varchar(20),
-    type varchar(30),
-    country varchar(20),
-    vol char(10),
-    occasion varchar(50),
-    grape varchar(50),
-    primary key(id)
+create table winedata(
+    productId char(10) not null,
+    pproductId varchar(30),
+    title varchar(100),
+    region varchar(50),
+    varietalId char(10),
+    vineyardId char(10),
+    productType char(10),
+    price char(15),
+    primary key(productId)
+);
+create table winereview(
+    productId char(10) not null,
+    username varchar(30) not null,
+    ratingvalue char(5),
+    primary key(productId,username)
 );
